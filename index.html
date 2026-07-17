@@ -4,408 +4,227 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Disciplined Man — The Bravo</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --gold: #c8a84b;
-    --gold-light: #e2c06a;
-    --gold-dim: #a8882e;
-    --black: #0a0a0a;
-    --dark: #111111;
-    --dark2: #181818;
-    --white: #f5f5f0;
-    --grey: #888880;
+  :root{
+    --charcoal:#0E0E0D;
+    --charcoal-raise:#161614;
+    --gold:#C49A4A;
+    --gold-dim:#8C6F39;
+    --bone:#EDEAE2;
+    --grey:#8C8A82;
+    --line:#2A2A26;
   }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Barlow', sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--charcoal);
+    color:var(--bone);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
+  .wrap{max-width:640px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:900; line-height:1.05; letter-spacing:-0.01em;}
+  .rule{height:1px; background:var(--line); border:none; margin:48px 0;}
 
   /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 60px 24px 48px;
-    position: relative;
-    overflow: hidden;
+  header.hero{padding:56px 0 40px;}
+  header.hero h1{font-size:clamp(40px,10vw,58px); margin-top:14px;}
+  header.hero h1 .accent{color:var(--gold); font-style:italic; font-weight:700;}
+  header.hero p.lede{margin-top:22px; font-size:17px; color:var(--bone); max-width:46ch;}
+  header.hero p.lede b{color:var(--gold); font-weight:600;}
+
+  .cta{
+    display:inline-block;
+    margin-top:28px;
+    background:var(--gold);
+    color:#0E0E0D;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:16px 26px;
+    border-radius:2px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .cta:hover{background:#D8AE5E; transform:translateY(-1px);}
+  .meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--grey);
+    margin-top:14px;
+    letter-spacing:0.02em;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--gold);
+  /* FOR YOU IF */
+  .forwho{background:var(--charcoal-raise); padding:44px 0;}
+  .forwho h2{font-size:26px; color:var(--bone);}
+  .forwho h2 .hi{color:var(--gold);}
+  ul.check{list-style:none; margin-top:24px;}
+  ul.check li{
+    display:flex; gap:12px; padding:14px 0;
+    border-top:1px solid var(--line);
+    font-size:15px;
   }
+  ul.check li:first-child{border-top:none;}
+  ul.check li::before{content:"—"; color:var(--gold); flex-shrink:0;}
 
-  .eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
+  /* PILLARS — signature element: seven vertical columns */
+  .pillars{padding:56px 0;}
+  .pillars h2{font-size:28px;}
+  .pillars p.sub{color:var(--grey); margin-top:10px; font-size:15px; max-width:44ch;}
+  .colgrid{
+    display:flex;
+    margin-top:36px;
+    border-top:1px solid var(--line);
+    overflow-x:auto;
   }
-
-  .hero-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 14vw, 88px);
-    line-height: 0.92;
-    letter-spacing: 0.01em;
-    color: var(--white);
-    margin-bottom: 28px;
+  .col{
+    flex:1 0 128px;
+    border-right:1px solid var(--line);
+    padding:20px 14px 20px 0;
+    position:relative;
   }
-
-  .hero-headline span {
-    color: var(--gold);
-    display: block;
+  .col:last-child{border-right:none;}
+  .col .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--gold-dim);
   }
-
-  .hero-sub {
-    font-size: 18px;
-    font-weight: 500;
-    color: #ccc;
-    line-height: 1.55;
-    max-width: 480px;
-    margin-bottom: 40px;
+  .col .name{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:15px;
+    margin-top:10px;
+    color:var(--bone);
+    line-height:1.2;
   }
+  .col .name.code{color:var(--gold);}
 
-  .hero-sub strong {
-    color: var(--white);
-    font-weight: 700;
+  /* CODE TEASER */
+  .code{background:var(--charcoal-raise); padding:48px 0;}
+  .code h2{font-size:26px;}
+  .code ol{margin-top:22px; padding-left:0; list-style:none; counter-reset:codelist;}
+  .code li{
+    counter-increment:codelist;
+    padding:10px 0;
+    font-size:14.5px;
+    color:var(--bone);
+    display:flex; gap:14px;
   }
-
-  /* DIVIDER LINE */
-  .rule {
-    width: 48px;
-    height: 2px;
-    background: var(--gold);
-    margin: 40px 0;
+  .code li::before{
+    content:counter(codelist);
+    font-family:'JetBrains Mono',monospace;
+    color:var(--gold);
+    font-size:12px;
+    flex-shrink:0;
+    width:16px;
+    padding-top:2px;
   }
+  .code .fade{color:var(--grey); font-size:13px; margin-top:12px;}
 
-  /* FOR WHO */
-  .for-who {
-    background: var(--dark2);
-    padding: 52px 24px;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
+  /* CLOSER */
+  .closer{padding:56px 0 72px; text-align:left;}
+  .closer h2{font-size:30px; max-width:14ch;}
+  .closer p{margin-top:18px; color:var(--bone); max-width:46ch; font-size:15.5px;}
+  .closer .cta{margin-top:26px;}
+
+  .foot{
+    border-top:1px solid var(--line);
+    padding:26px 0 40px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--grey);
+    display:flex; justify-content:space-between; align-items:center;
   }
+  .foot .mark{color:var(--gold);}
 
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  .for-who-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 9vw, 54px);
-    line-height: 1;
-    color: var(--white);
-    margin-bottom: 28px;
-  }
-
-  .pain-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .pain-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    font-size: 16px;
-    color: #bbb;
-    line-height: 1.5;
-  }
-
-  .pain-list li::before {
-    content: '—';
-    color: var(--gold);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .pain-list li strong {
-    color: var(--white);
-    font-weight: 600;
-  }
-
-  /* PILLARS */
-  .pillars {
-    padding: 52px 24px;
-  }
-
-  .pillars-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(32px, 8vw, 48px);
-    color: var(--white);
-    margin-bottom: 32px;
-    line-height: 1;
-  }
-
-  .pillar-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid #1e1e1e;
-  }
-
-  .pillar-item:last-child {
-    border-bottom: none;
-  }
-
-  .pillar-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    color: var(--gold);
-    line-height: 1;
-    flex-shrink: 0;
-    width: 32px;
-  }
-
-  .pillar-text strong {
-    display: block;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .pillar-text p {
-    font-size: 14px;
-    color: var(--grey);
-    line-height: 1.5;
-  }
-
-  /* PULL QUOTE */
-  .pull-quote {
-    background: var(--gold);
-    padding: 40px 24px;
-  }
-
-  .pull-quote p {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 7vw, 42px);
-    color: var(--black);
-    line-height: 1.1;
-    letter-spacing: 0.01em;
-  }
-
-  /* CTA SECTION */
-  .cta-section {
-    padding: 56px 24px 64px;
-    text-align: center;
-  }
-
-  .cta-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(38px, 10vw, 60px);
-    line-height: 1;
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-
-  .cta-sub {
-    font-size: 15px;
-    color: var(--grey);
-    margin-bottom: 36px;
-    line-height: 1.6;
-  }
-
-  .cta-sub strong {
-    color: var(--white);
-  }
-
-  .btn {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 16px;
-    padding: 20px 24px;
-    background: var(--gold);
-    color: var(--black);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    transition: background 0.15s ease, transform 0.1s ease;
-  }
-
-  .btn:active {
-    transform: scale(0.98);
-    background: var(--gold-dim);
-  }
-
-  .btn-note {
-    font-size: 13px;
-    color: var(--grey);
-    letter-spacing: 0.04em;
-  }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid #1e1e1e;
-    padding: 24px;
-    text-align: center;
-  }
-
-  footer p {
-    font-size: 12px;
-    color: #444;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  footer span {
-    color: var(--gold);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
+  @media (max-width:480px){
+    .wrap{padding:0 20px;}
+    .col{flex:1 0 108px;}
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="eyebrow">The Bravo — Digital Guide</p>
-  <h1 class="hero-headline">
-    The<br>
-    Disciplined<br>
-    <span>Man.</span>
-  </h1>
-  <p class="hero-sub">
-    You already know what you should be doing.<br>
-    <strong>The problem is you keep not doing it.</strong><br><br>
-    This book fixes that.
-  </p>
-  <a href="https://thebrav0.gumroad.com/l/lfwxxs" class="btn">Get the guide — $9.99</a>
-  <p class="btn-note">34 pages. Instant download. No fluff.</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The Bravo — Digital Guide</div>
+    <h1>THE DISCIPLINED<br><span class="accent">Man.</span></h1>
+    <p class="lede">You already know what you should be doing. <b>The problem is you keep not doing it.</b> This book fixes that.</p>
+    <a class="cta" href="https://thebrav0.gumroad.com/l/lfwxxs">Get the guide — $9.99</a>
+    <div class="meta">26 pages · Instant download · No fluff.</div>
+  </div>
+</header>
+
+<section class="forwho">
+  <div class="wrap">
+    <h2>This is for you if <span class="hi">you're tired of starting over.</span></h2>
+    <ul class="check">
+      <li>You set goals and break them within a week</li>
+      <li>Your mornings run you, instead of the other way around</li>
+      <li>You know what to do — you just don't do it</li>
+      <li>You're done with motivation that fades by Tuesday</li>
+    </ul>
+  </div>
 </section>
 
-<!-- FOR WHO -->
-<section class="for-who">
-  <p class="section-label">This is for you if</p>
-  <h2 class="for-who-headline">You're tired of starting over.</h2>
-  <ul class="pain-list">
-    <li>You set goals and <strong>break them within a week</strong></li>
-    <li>You know what the disciplined version of you looks like — <strong>but you can't seem to become him</strong></li>
-    <li>Motivation hits and then <strong>disappears by Tuesday</strong></li>
-    <li>You've read about discipline. Watched videos about it. <strong>And nothing has changed.</strong></li>
-    <li>You feel the gap between who you are and <strong>who you know you could be</strong> — and it weighs on you</li>
-  </ul>
-</section>
-
-<!-- PILLARS -->
 <section class="pillars">
-  <p class="section-label">What's inside</p>
-  <h2 class="pillars-headline">7 Pillars. One standard.</h2>
-
-  <div class="pillar-item">
-    <span class="pillar-num">01</span>
-    <div class="pillar-text">
-      <strong>What Discipline Actually Is</strong>
-      <p>Not punishment. Not willpower. The real definition — and why most men have it wrong.</p>
-    </div>
+  <div class="wrap">
+    <h2>Seven pillars. One code.</h2>
+    <p class="sub">Not theory. Not a highlight reel. A direct, chapter-by-chapter build from what discipline actually is to the code that holds it together.</p>
   </div>
-
-  <div class="pillar-item">
-    <span class="pillar-num">02</span>
-    <div class="pillar-text">
-      <strong>Morning Mastery</strong>
-      <p>How to own the first hour before the world takes it from you.</p>
-    </div>
-  </div>
-
-  <div class="pillar-item">
-    <span class="pillar-num">03</span>
-    <div class="pillar-text">
-      <strong>Controlling Your Mind</strong>
-      <p>Laziness. Distraction. Weak thinking. How to beat all three — starting today.</p>
-    </div>
-  </div>
-
-  <div class="pillar-item">
-    <span class="pillar-num">04</span>
-    <div class="pillar-text">
-      <strong>The 90-Day Habit System</strong>
-      <p>The only framework that turns effort into identity. Not 21 days. 90.</p>
-    </div>
-  </div>
-
-  <div class="pillar-item">
-    <span class="pillar-num">05</span>
-    <div class="pillar-text">
-      <strong>Silence & Solitude</strong>
-      <p>Why strong men protect their alone time — and what it gives them that the crowd never will.</p>
-    </div>
-  </div>
-
-  <div class="pillar-item">
-    <span class="pillar-num">06</span>
-    <div class="pillar-text">
-      <strong>Physical Discipline</strong>
-      <p>Your body is a statement. This chapter is about the standard you decide to hold.</p>
-    </div>
-  </div>
-
-  <div class="pillar-item">
-    <span class="pillar-num">07</span>
-    <div class="pillar-text">
-      <strong>The Disciplined Man's Code</strong>
-      <p>10 principles to govern your decisions, your behavior, and your character — when no one is watching.</p>
-    </div>
+  <div class="colgrid wrap">
+    <div class="col"><div class="num">01</div><div class="name">The Foundation</div></div>
+    <div class="col"><div class="num">02</div><div class="name">Morning Mastery</div></div>
+    <div class="col"><div class="num">03</div><div class="name">Controlling Your Mind</div></div>
+    <div class="col"><div class="num">04</div><div class="name">Unbreakable Habits</div></div>
+    <div class="col"><div class="num">05</div><div class="name">Silence &amp; Solitude</div></div>
+    <div class="col"><div class="num">06</div><div class="name">Physical Discipline</div></div>
+    <div class="col"><div class="num">07</div><div class="name code">The Code</div></div>
   </div>
 </section>
 
-<!-- PULL QUOTE -->
-<div class="pull-quote">
-  <p>Less than a coffee. One decision away from the man you've been putting off becoming.</p>
+<section class="code">
+  <div class="wrap">
+    <div class="eyebrow">Chapter Seven</div>
+    <h2 style="margin-top:14px;">The Disciplined Man's Code</h2>
+    <ol>
+      <li>I keep my word to myself above all else</li>
+      <li>I embrace discomfort as the price of growth</li>
+      <li>I take full ownership of my life</li>
+      <li>I protect my energy and attention fiercely</li>
+      <li>I lead myself before attempting to lead others</li>
+    </ol>
+    <p class="fade">+ 5 more principles inside — the full ten-principle code that ties every pillar together.</p>
+  </div>
+</section>
+
+<section class="closer">
+  <div class="wrap">
+    <h2>Less than a coffee. One decision away.</h2>
+    <p>26 pages. Seven pillars. A 30-day challenge to prove it to yourself. No theory, no filler — just what works.</p>
+    <a class="cta" href="https://thebrav0.gumroad.com/l/lfwxxs">Get the guide — $9.99</a>
+  </div>
+</section>
+
+<div class="foot">
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>THE BRAVO</span>
+    <span class="mark">🔱</span>
+  </div>
 </div>
 
-<!-- CTA -->
-<section class="cta-section">
-  <h2 class="cta-headline">Make the decision.</h2>
-  <p class="cta-sub">
-    <strong>$9.99. Instant download.</strong><br>
-    34 pages of direct, practical, no-excuse guidance<br>
-    built for the man who is done starting over.
-  </p>
-  <a href="https://thebrav0.gumroad.com/l/lfwxxs" class="btn">Get The Disciplined Man — $9.99</a>
-  <p class="btn-note">Secure checkout via Gumroad</p>
-</section>
-
-<footer>
-  <p>The Bravo &nbsp;|&nbsp; <span>🔱</span> &nbsp;|&nbsp; Built for men who mean it</p>
-</footer>
-
 </body>
-   </html>
-   
+</html>
