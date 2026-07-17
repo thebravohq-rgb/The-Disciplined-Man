@@ -84,6 +84,35 @@
   .pillars{padding:56px 0;}
   .pillars h2{font-size:28px;}
   .pillars p.sub{color:var(--grey); margin-top:10px; font-size:15px; max-width:44ch;}
+  .pillars .scrollzone{position:relative;}
+  .pillars .scrollzone::after{
+    content:"";
+    position:absolute;
+    top:20px; right:0; bottom:0;
+    width:56px;
+    background:linear-gradient(90deg, rgba(14,14,13,0), var(--charcoal) 70%);
+    pointer-events:none;
+  }
+  .scrollhint{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-top:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--grey);
+  }
+  .scrollhint svg{
+    animation:nudge 1.4s ease-in-out infinite;
+  }
+  @keyframes nudge{
+    0%,100%{transform:translateX(0);}
+    50%{transform:translateX(4px);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .scrollhint svg{animation:none;}
+  }
   .colgrid{
     display:flex;
     margin-top:36px;
@@ -185,14 +214,20 @@
     <h2>Seven pillars. One code.</h2>
     <p class="sub">Not theory. Not a highlight reel. A direct, chapter-by-chapter build from what discipline actually is to the code that holds it together.</p>
   </div>
-  <div class="colgrid wrap">
-    <div class="col"><div class="num">01</div><div class="name">The Foundation</div></div>
-    <div class="col"><div class="num">02</div><div class="name">Morning Mastery</div></div>
-    <div class="col"><div class="num">03</div><div class="name">Controlling Your Mind</div></div>
-    <div class="col"><div class="num">04</div><div class="name">Unbreakable Habits</div></div>
-    <div class="col"><div class="num">05</div><div class="name">Silence &amp; Solitude</div></div>
-    <div class="col"><div class="num">06</div><div class="name">Physical Discipline</div></div>
-    <div class="col"><div class="num">07</div><div class="name code">The Code</div></div>
+  <div class="scrollzone">
+    <div class="colgrid wrap">
+      <div class="col"><div class="num">01</div><div class="name">The Foundation</div></div>
+      <div class="col"><div class="num">02</div><div class="name">Morning Mastery</div></div>
+      <div class="col"><div class="num">03</div><div class="name">Controlling Your Mind</div></div>
+      <div class="col"><div class="num">04</div><div class="name">Unbreakable Habits</div></div>
+      <div class="col"><div class="num">05</div><div class="name">Silence &amp; Solitude</div></div>
+      <div class="col"><div class="num">06</div><div class="name">Physical Discipline</div></div>
+      <div class="col"><div class="num">07</div><div class="name code">The Code</div></div>
+    </div>
+  </div>
+  <div class="wrap scrollhint">
+    <span>SWIPE FOR ALL 7</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C49A4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
   </div>
 </section>
 
