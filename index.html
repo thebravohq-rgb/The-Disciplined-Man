@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>The Disciplined Man — The Bravo</title>
+  <title>The Disciplined Man | The Bravo</title>
 
   <meta
     name="description"
-    content="The Disciplined Man — a practical system for building discipline, stronger habits, sharper focus, and consistent action."
-  >
+    content="The Disciplined Man — a practical system for men ready to stop negotiating with themselves and start following through."
+  />
 
   <style>
     :root {
-      --black: #070707;
-      --dark: #0d0d0d;
-      --card: #121212;
+      --black: #050505;
+      --black-2: #090909;
+      --black-3: #101010;
+      --panel: #111111;
       --gold: #c9a227;
-      --gold-light: #e0bd4f;
-      --white: #f5f3ed;
-      --gray: #a5a39d;
-      --line: rgba(255, 255, 255, 0.09);
-      --max: 1120px;
+      --gold-light: #e2c35a;
+      --white: #f2f0e8;
+      --muted: #92908a;
+      --line: rgba(255,255,255,.10);
+      --max: 1180px;
     }
 
     * {
@@ -35,12 +36,11 @@
     }
 
     body {
-      background:
-        radial-gradient(circle at 80% 0%, rgba(201, 162, 39, 0.10), transparent 28%),
-        var(--black);
+      background: var(--black);
       color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -48,107 +48,151 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* NAVIGATION */
+    .container {
+      width: min(91%, var(--max));
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
-      padding: 22px 0;
+      position: relative;
+      z-index: 20;
       border-bottom: 1px solid var(--line);
-      background: rgba(7, 7, 7, 0.92);
+      background: rgba(5,5,5,.94);
     }
 
     .nav {
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
-      font-size: 0.82rem;
+    .brand {
+      font-size: .76rem;
       font-weight: 900;
-      letter-spacing: 0.2em;
+      letter-spacing: .28em;
     }
 
-    .nav-link {
+    .nav-cta {
+      padding: 10px 17px;
+      border: 1px solid rgba(201,162,39,.55);
       color: var(--gold-light);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      border: 1px solid rgba(201, 162, 39, 0.45);
-      padding: 9px 15px;
-      border-radius: 3px;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      transition: .2s ease;
     }
 
-    /* HERO */
+    .nav-cta:hover {
+      background: var(--gold);
+      color: #050505;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      padding: 90px 0 100px;
+      min-height: 790px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(
+          circle at 78% 48%,
+          rgba(201,162,39,.11),
+          transparent 27%
+        ),
+        linear-gradient(120deg, #050505, #090909 55%, #050505);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      right: -250px;
+      top: 80px;
+      border: 1px solid rgba(201,162,39,.08);
+      border-radius: 50%;
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.1fr .9fr;
       gap: 70px;
       align-items: center;
     }
 
     .eyebrow {
       color: var(--gold-light);
-      font-size: 0.72rem;
+      font-size: .68rem;
       font-weight: 900;
-      letter-spacing: 0.22em;
+      letter-spacing: .27em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 18px 0 25px;
-      font-size: clamp(3.4rem, 7vw, 6.4rem);
-      line-height: 0.91;
-      letter-spacing: -0.06em;
+    .hero h1 {
+      margin: 20px 0 28px;
+      max-width: 760px;
+      font-size: clamp(4rem, 8vw, 7.8rem);
+      line-height: .84;
+      letter-spacing: -.075em;
       font-weight: 950;
+      text-transform: uppercase;
     }
 
-    h1 span {
+    .hero h1 span {
       color: var(--gold-light);
     }
 
-    .hero-text {
+    .hero-description {
       max-width: 650px;
-      color: #d0cdc5;
-      font-size: 1.08rem;
       margin-bottom: 30px;
+      color: #c0bdb5;
+      font-size: 1.05rem;
     }
 
-    .hero-text strong {
+    .hero-description strong {
       color: var(--white);
     }
 
-    .buttons {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      align-items: center;
+      gap: 14px;
     }
 
     .button {
+      min-height: 53px;
+      padding: 0 25px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 23px;
-      border-radius: 3px;
-      font-size: 0.82rem;
+      border-radius: 2px;
+      font-size: .72rem;
       font-weight: 900;
-      letter-spacing: 0.04em;
-      transition: 0.2s ease;
+      letter-spacing: .10em;
+      transition: .2s ease;
     }
 
     .button-primary {
       background: var(--gold);
-      color: #080705;
+      color: #070604;
     }
 
     .button-primary:hover {
@@ -156,795 +200,860 @@
       transform: translateY(-2px);
     }
 
-    .button-secondary {
+    .button-outline {
       border: 1px solid var(--line);
-      background: #101010;
+      color: #d0cdc5;
     }
 
-    .button-secondary:hover {
-      border-color: rgba(201, 162, 39, 0.55);
+    .button-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
     }
 
-    /* BOOK MOCKUP */
+    .hero-price {
+      margin-top: 20px;
+      color: #77756f;
+      font-size: .75rem;
+      letter-spacing: .06em;
+    }
 
-    .book-area {
+    .hero-price strong {
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    /* =========================
+       BOOK
+    ========================= */
+
+    .book-stage {
       display: flex;
       justify-content: center;
+      perspective: 1000px;
     }
 
     .book {
-      position: relative;
-      width: min(330px, 78vw);
+      width: min(360px, 76vw);
       aspect-ratio: 2 / 3;
-      padding: 32px 27px;
-
+      position: relative;
+      padding: 34px 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       background:
-        linear-gradient(140deg, rgba(255,255,255,0.07), transparent 30%),
-        linear-gradient(155deg, #1b1b1b, #050505 78%);
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.08),
+          transparent 26%
+        ),
+        linear-gradient(
+          155deg,
+          #1a1a1a 0%,
+          #0c0c0c 48%,
+          #030303 100%
+        );
 
-      border: 1px solid rgba(201, 162, 39, 0.55);
+      border: 1px solid rgba(201,162,39,.62);
 
       box-shadow:
-        25px 30px 75px rgba(0, 0, 0, 0.75),
-        0 0 55px rgba(201, 162, 39, 0.07);
+        28px 35px 70px rgba(0,0,0,.75),
+        0 0 80px rgba(201,162,39,.07);
 
-      overflow: hidden;
+      transform: rotateY(-5deg) rotateX(2deg);
     }
 
     .book::before {
       content: "";
       position: absolute;
-      inset: 15px;
-      border: 1px solid rgba(201, 162, 39, 0.2);
+      inset: 16px;
+      border: 1px solid rgba(201,162,39,.22);
     }
 
-    .book-small {
+    .book-top,
+    .book-bottom {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       color: var(--gold-light);
-      font-size: 0.62rem;
+      font-size: .60rem;
       font-weight: 900;
-      letter-spacing: 0.25em;
+      letter-spacing: .28em;
+    }
+
+    .book-middle {
+      position: relative;
+      z-index: 2;
     }
 
     .book-title {
-      position: relative;
-      z-index: 1;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 0.87;
-      letter-spacing: -0.06em;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: .84;
+      letter-spacing: -.07em;
       font-weight: 950;
     }
 
-    .book-line {
-      position: relative;
-      z-index: 1;
-      width: 55px;
+    .book-rule {
+      width: 58px;
       height: 2px;
-      margin: 22px 0;
+      margin: 23px 0;
       background: var(--gold);
     }
 
-    .book-subtitle {
-      position: relative;
-      z-index: 1;
-      color: #aaa;
-      font-size: 0.68rem;
+    .book-tagline {
+      color: #aaa7a0;
+      font-size: .65rem;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
     }
 
-    /* SECTION */
+    /* =========================
+       STATEMENT
+    ========================= */
 
-    .section {
-      padding: 90px 0;
-      border-top: 1px solid var(--line);
+    .statement {
+      padding: 105px 0;
+      border-bottom: 1px solid var(--line);
+      background: #080808;
     }
 
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 42px;
+    .statement-inner {
+      max-width: 980px;
     }
 
-    h2 {
-      margin: 12px 0 17px;
-      font-size: clamp(2.3rem, 5vw, 4.2rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-
-    .section-text {
-      color: var(--gray);
-      font-size: 1.03rem;
-    }
-
-    /* PROBLEM */
-
-    .truth-box {
-      position: relative;
-      padding: 45px;
-      background:
-        linear-gradient(145deg, #131313, #0b0b0b);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .truth-box::after {
-      content: "";
-      position: absolute;
-      right: -100px;
-      top: -100px;
-      width: 270px;
-      height: 270px;
-      border: 1px solid rgba(201, 162, 39, 0.14);
-      border-radius: 50%;
-    }
-
-    .truth-box p {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin-top: 15px;
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      line-height: 1.2;
+    .statement p {
+      margin-top: 18px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
       font-weight: 850;
     }
 
-    .gold {
+    .statement p span {
       color: var(--gold-light);
     }
 
-    /* BENEFITS */
+    /* =========================
+       PROBLEM
+    ========================= */
 
-    .cards {
+    .problem {
+      padding: 100px 0;
+    }
+
+    .problem-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 70px;
+      align-items: start;
     }
 
-    .card {
-      min-height: 225px;
-      padding: 29px;
-      background: var(--card);
-      border: 1px solid var(--line);
+    .problem-number {
+      color: #171717;
+      font-size: clamp(6rem, 15vw, 12rem);
+      line-height: .7;
+      font-weight: 950;
+      letter-spacing: -.1em;
     }
 
-    .card-number {
+    .problem-content h2 {
+      max-width: 800px;
+      margin: 13px 0 20px;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+
+    .problem-content p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .benefits {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #090909;
+    }
+
+    .section-heading {
+      max-width: 750px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      margin: 13px 0 17px;
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      line-height: .92;
+      letter-spacing: -.06em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .benefit {
+      min-height: 260px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #0c0c0c;
+    }
+
+    .benefit-number {
       color: var(--gold-light);
-      font-size: 0.7rem;
+      font-size: .65rem;
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: .18em;
     }
 
-    .card h3 {
-      margin: 25px 0 10px;
+    .benefit h3 {
+      margin: 55px 0 10px;
       font-size: 1.2rem;
     }
 
-    .card p {
-      color: var(--gray);
-      font-size: 0.93rem;
+    .benefit p {
+      color: var(--muted);
+      font-size: .9rem;
     }
 
-    /* PILLARS */
+    /* =========================
+       PILLARS
+    ========================= */
 
     .pillars {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      padding: 100px 0;
+    }
+
+    .pillar-list {
+      border-top: 1px solid var(--line);
     }
 
     .pillar {
-      display: flex;
-      gap: 18px;
-      padding: 24px;
-      background: #0e0e0e;
-      border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 100px 1fr 1.4fr;
+      gap: 30px;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .pillar-number {
-      min-width: 42px;
       color: var(--gold-light);
-      font-size: 0.72rem;
+      font-size: .68rem;
       font-weight: 900;
+      letter-spacing: .15em;
     }
 
     .pillar h3 {
-      font-size: 1rem;
-      margin-bottom: 4px;
+      font-size: 1.25rem;
     }
 
     .pillar p {
-      color: var(--gray);
-      font-size: 0.87rem;
+      color: var(--muted);
+      font-size: .9rem;
     }
 
-    /* CHALLENGE */
+    /* =========================
+       30 DAY
+    ========================= */
 
-    .challenge {
+    .proof {
+      padding: 110px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(
+          circle at 15% 50%,
+          rgba(201,162,39,.09),
+          transparent 30%
+        ),
+        #090909;
+    }
+
+    .proof-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 55px;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
       align-items: center;
     }
 
-    .challenge-number {
-      font-size: clamp(5rem, 12vw, 10rem);
-      line-height: 0.8;
+    .proof-number {
+      font-size: clamp(8rem, 18vw, 15rem);
+      line-height: .7;
+      letter-spacing: -.11em;
       font-weight: 950;
-      letter-spacing: -0.08em;
       color: var(--gold);
     }
 
-    .challenge-copy h2 {
-      margin-top: 10px;
+    .proof-content h2 {
+      margin: 14px 0 18px;
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      line-height: .92;
+      letter-spacing: -.06em;
     }
 
-    .challenge-copy p {
-      color: var(--gray);
+    .proof-content p {
       max-width: 650px;
+      color: var(--muted);
+      font-size: 1rem;
     }
 
-    /* FINAL CTA */
+    /* =========================
+       FINAL CTA
+    ========================= */
 
-    .final-cta {
-      padding: 110px 20px;
+    .final {
+      padding: 130px 20px;
       text-align: center;
-      border-top: 1px solid var(--line);
       background:
-        radial-gradient(circle at 50% 20%, rgba(201,162,39,0.13), transparent 40%);
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(201,162,39,.13),
+          transparent 40%
+        ),
+        #050505;
     }
 
-    .final-cta h2 {
-      max-width: 850px;
-      margin: 12px auto 18px;
+    .final h2 {
+      max-width: 900px;
+      margin: 14px auto 20px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: .88;
+      letter-spacing: -.07em;
     }
 
-    .final-cta p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: var(--gray);
+    .final p {
+      max-width: 620px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1rem;
     }
 
-    .price {
-      margin: 15px 0 25px;
-      font-size: 2.1rem;
+    .final-price {
+      margin: 27px 0;
+      font-size: 2rem;
       font-weight: 950;
     }
 
-    /* FOOTER */
-
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      color: #777;
-      font-size: 0.76rem;
+    .final .button {
+      min-width: 245px;
     }
 
-    .footer-content {
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      color: #666;
+      font-size: .7rem;
+      letter-spacing: .06em;
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       gap: 20px;
     }
 
-    /* MOBILE */
+    /* =========================
+       RESPONSIVE
+    ========================= */
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
 
       .hero {
-        padding: 60px 0 75px;
+        min-height: auto;
+        padding: 70px 0 85px;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 55px;
+        gap: 65px;
       }
 
-      .book-area {
+      .book-stage {
         order: -1;
       }
 
-      .cards {
+      .benefit-grid {
         grid-template-columns: 1fr;
       }
 
-      .pillars {
+      .problem-grid,
+      .proof-grid {
         grid-template-columns: 1fr;
+        gap: 35px;
       }
 
-      .challenge {
-        grid-template-columns: 1fr;
-        gap: 25px;
+      .problem-number {
+        font-size: 7rem;
       }
 
-      .challenge-number {
-        font-size: 6rem;
+      .proof-number {
+        font-size: 8rem;
       }
 
-      .section {
-        padding: 70px 0;
+      .pillar {
+        grid-template-columns: 60px 1fr;
+        gap: 15px;
+      }
+
+      .pillar p {
+        grid-column: 2;
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 600px) {
 
-      h1 {
-        font-size: 3.25rem;
+      .nav {
+        height: 65px;
       }
 
-      .nav-link {
+      .nav-cta {
         display: none;
       }
 
-      .buttons {
-        width: 100%;
+      .hero h1 {
+        font-size: 3.55rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .button {
         width: 100%;
       }
 
-      .truth-box {
-        padding: 30px;
+      .book {
+        width: 280px;
       }
 
-      .footer-content {
+      .statement,
+      .problem,
+      .benefits,
+      .pillars,
+      .proof {
+        padding: 70px 0;
+      }
+
+      .benefit {
+        min-height: 210px;
+      }
+
+      .benefit h3 {
+        margin-top: 35px;
+      }
+
+      .final {
+        padding: 90px 20px;
+      }
+
+      .footer-inner {
         flex-direction: column;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
     <div class="container nav">
-      <div class="logo">THE BRAVO</div>
 
-      <a href="#get-book" class="nav-link">
+      <div class="brand">
+        THE BRAVO
+      </div>
+
+      <a
+        class="nav-cta"
+        href="https://thebrav0.gumroad.com/l/lfwxxs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         GET THE BOOK
       </a>
+
     </div>
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
-  <main>
+  <section class="hero">
 
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div>
-
-          <div class="eyebrow">
-            A Practical System For Discipline
-          </div>
-
-          <h1>
-            Stop knowing better.
-            <br>
-            <span>Start doing better.</span>
-          </h1>
-
-          <p class="hero-text">
-            A disciplined man will outperform a talented man who keeps making excuses.
-            <strong>THE DISCIPLINED MAN</strong> gives you practical strategies to sharpen
-            your focus, build habits that stick, eliminate procrastination, and become
-            the kind of man who does what he says he'll do.
-          </p>
-
-          <div class="buttons">
-
-            <a
-              href="https://thebravohq-rgb.github.io/The-Disciplined-Man/"
-              class="button button-primary"
-              target="_blank"
-              rel="noopener"
-            >
-              GRAB YOUR COPY
-            </a>
-
-            <a
-              href="#inside"
-              class="button button-secondary"
-            >
-              SEE WHAT'S INSIDE
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- BOOK -->
-
-        <div class="book-area">
-
-          <div class="book">
-
-            <div class="book-small">
-              THE BRAVO
-            </div>
-
-            <div>
-
-              <div class="book-title">
-                THE<br>
-                DISCIPLINED<br>
-                MAN
-              </div>
-
-              <div class="book-line"></div>
-
-              <div class="book-subtitle">
-                Discipline is the standard.
-              </div>
-
-            </div>
-
-            <div class="book-small">
-              THE BRAVO EDITION
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- THE PROBLEM -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="truth-box">
-
-          <div class="eyebrow">
-            The Problem
-          </div>
-
-          <p>
-            You already know what you need to do.
-            The real problem is whether you'll have the
-            <span class="gold">discipline to do it.</span>
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- WHAT YOU WILL BUILD -->
-
-    <section class="section" id="inside">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            What You Will Build
-          </div>
-
-          <h2>
-            Discipline that survives motivation.
-          </h2>
-
-          <p class="section-text">
-            This isn't about becoming motivated for a few days.
-            It's about building standards that continue to hold
-            when motivation disappears.
-          </p>
-
-        </div>
-
-
-        <div class="cards">
-
-          <article class="card">
-
-            <div class="card-number">
-              01 — FOCUS
-            </div>
-
-            <h3>
-              Sharpen Your Mind
-            </h3>
-
-            <p>
-              Learn to recognize the difference between a thought
-              and a command, so temporary resistance doesn't control
-              your actions.
-            </p>
-
-          </article>
-
-
-          <article class="card">
-
-            <div class="card-number">
-              02 — HABITS
-            </div>
-
-            <h3>
-              Build Habits That Stick
-            </h3>
-
-            <p>
-              Stop depending on motivation. Build repeatable behaviors
-              that create evidence and strengthen your identity.
-            </p>
-
-          </article>
-
-
-          <article class="card">
-
-            <div class="card-number">
-              03 — ACTION
-            </div>
-
-            <h3>
-              Follow Through
-            </h3>
-
-            <p>
-              Turn promises into proof by becoming someone who acts
-              consistently instead of constantly starting over.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- THE 7 PILLARS -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            Inside The Book
-          </div>
-
-          <h2>
-            Seven pillars. One standard.
-          </h2>
-
-          <p class="section-text">
-            A framework designed to take discipline beyond motivation
-            and turn it into something you practice.
-          </p>
-
-        </div>
-
-
-        <div class="pillars">
-
-          <div class="pillar">
-
-            <div class="pillar-number">01</div>
-
-            <div>
-              <h3>The Foundation</h3>
-              <p>
-                Identify the negotiation loop that keeps you stuck.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">02</div>
-
-            <div>
-              <h3>The Mind</h3>
-              <p>
-                Learn to act without letting every thought become a command.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">03</div>
-
-            <div>
-              <h3>Morning Mastery</h3>
-              <p>
-                Begin the day with deliberate action instead of passive drift.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">04</div>
-
-            <div>
-              <h3>Habits</h3>
-              <p>
-                Build repeatable behavior that creates real evidence.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">05</div>
-
-            <div>
-              <h3>Silence &amp; Solitude</h3>
-              <p>
-                Reduce noise and create space for clear thought.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">06</div>
-
-            <div>
-              <h3>Physical Discipline</h3>
-              <p>
-                Strengthen self-command through consistent physical standards.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">07</div>
-
-            <div>
-              <h3>The Code</h3>
-              <p>
-                Turn discipline into a personal standard you live by.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="pillar">
-
-            <div class="pillar-number">30 DAYS</div>
-
-            <div>
-              <h3>30-Day Proof</h3>
-              <p>
-                Put the principles into practice through consistent action.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- 30 DAY PROOF -->
-
-    <section class="section">
-
-      <div class="container challenge">
-
-        <div class="challenge-number">
-          30
-        </div>
-
-        <div class="challenge-copy">
-
-          <div class="eyebrow">
-            Put It Into Practice
-          </div>
-
-          <h2>
-            Don't just read it. Prove it.
-          </h2>
-
-          <p>
-            The 30-Day Proof turns the ideas into action.
-            Your goal isn't to feel disciplined. Your goal is to
-            create evidence through what you actually do.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- FINAL CTA -->
-
-    <section class="final-cta" id="get-book">
-
-      <div class="eyebrow">
-        THE DISCIPLINED MAN
-      </div>
-
-      <h2>
-        Stop negotiating with yourself.
-      </h2>
-
-      <p>
-        You don't need another reminder.
-        You need to become the man who follows through.
-      </p>
-
-      <div class="price">
-        $13.99
-      </div>
-
-      <a
-        href="https://thebravohq-rgb.github.io/The-Disciplined-Man/"
-        class="button button-primary"
-        target="_blank"
-        rel="noopener"
-      >
-        GET THE DISCIPLINED MAN
-      </a>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="container footer-content">
+    <div class="container hero-grid">
 
       <div>
-        © THE BRAVO
+
+        <div class="eyebrow">
+          THE BRAVO PRESENTS
+        </div>
+
+        <h1>
+          THE<br>
+          DISCIPLINED<br>
+          <span>MAN.</span>
+        </h1>
+
+        <p class="hero-description">
+          A disciplined man will outperform a talented man who keeps making excuses.
+          <strong>THE DISCIPLINED MAN</strong> gives you practical strategies to sharpen
+          your focus, build habits that stick, eliminate procrastination, and become
+          the kind of man who does what he says he'll do.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="button button-primary"
+            href="https://thebrav0.gumroad.com/l/lfwxxs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GET THE DISCIPLINED MAN
+          </a>
+
+          <a
+            class="button button-outline"
+            href="#inside"
+          >
+            EXPLORE THE BOOK
+          </a>
+
+        </div>
+
+        <div class="hero-price">
+          Digital edition · <strong>$13.99</strong>
+        </div>
+
       </div>
 
-      <div>
-        Discipline is the standard.
+
+      <!-- BOOK -->
+
+      <div class="book-stage">
+
+        <div class="book">
+
+          <div class="book-top">
+            THE BRAVO
+          </div>
+
+          <div class="book-middle">
+
+            <div class="book-title">
+              THE<br>
+              DISCIPLINED<br>
+              MAN
+            </div>
+
+            <div class="book-rule"></div>
+
+            <div class="book-tagline">
+              Discipline is the standard.
+            </div>
+
+          </div>
+
+          <div class="book-bottom">
+            THE BRAVO EDITION
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
-  </footer>
+  </section>
 
-</body>
-  </html>
+
+  <!-- =========================
+       STATEMENT
+  ========================== -->
+
+  <section class="statement">
+
+    <div class="container">
+
+      <div class="statement-inner">
+
+        <div class="eyebrow">
+          THE GAP
+        </div>
+
+        <p>
+          You already know what you should be doing.
+          <span>The problem is you keep not doing it.</span>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROBLEM
+  ========================== -->
+
+  <section class="problem">
+
+    <div class="container problem-grid">
+
+      <div class="problem-number">
+        01
+      </div>
+
+      <div class="problem-content">
+
+        <div class="eyebrow">
+          THE PROBLEM
+        </div>
+
+        <h2>
+          Knowing isn't the same as doing.
+        </h2>
+
+        <p>
+          You can know what matters and still procrastinate.
+          You can set standards and still break them.
+          You can start strong and still fall back into the same patterns.
+          The problem isn't always information. It's the lack of consistent execution.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BENEFITS
+  ========================== -->
+
+  <section class="benefits" id="inside">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          WHAT THE BOOK BUILDS
+        </div>
+
+        <h2>
+          Less intention.<br>
+          More proof.
+        </h2>
+
+        <p>
+          The goal isn't to make you feel disciplined for a few days.
+          It's to help you build standards that hold when motivation disappears.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <article class="benefit">
+
+          <div class="benefit-number">
+            01 — MIND
+          </div>
+
+          <h3>
+            Sharpen Your Focus
+          </h3>
+
+          <p>
+            Learn to recognize thoughts and resistance without automatically
+            allowing them to dictate your actions.
+          </p>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit-number">
+            02 — HABITS
+          </div>
+
+          <h3>
+            Build Habits That Stick
+          </h3>
+
+          <p>
+            Create repeatable behavior and use evidence to strengthen
+            the identity you're building.
+          </p>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit-number">
+            03 — ACTION
+          </div>
+
+          <h3>
+            Follow Through
+          </h3>
+
+          <p>
+            Stop constantly restarting and become more consistent
+            with the promises you make to yourself.
+          </p>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit-number">
+            04 — MORNING
+          </div>
+
+          <h3>
+            Take Control of Your Start
+          </h3>
+
+          <p>
+            Build a deliberate beginning to your day instead of
+            surrendering your attention to whatever comes first.
+          </p>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit-number">
+            05 — SILENCE
+          </div>
+
+          <h3>
+            Protect Your Attention
+          </h3>
+
+          <p>
+            Create room for clear thought, reflection, and deliberate
+            action through silence and solitude.
+          </p>
+
+        </article>
+
+
+        <article class="benefit">
+
+          <div class="benefit-number">
+            06 — STANDARD
+          </div>
+
+          <h3>
+            Live By a Code
+          </h3>
+
+          <p>
+            Build a personal standard that remains useful beyond
+            individual goals, moods, or temporary motivation.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SEVEN PILLARS
+  ========================== -->
+
+  <section class="pillars">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          THE FRAMEWORK
+        </div>
+
+        <h2>
+          Seven pillars of discipline.
+        </h2>
+
+        <p>
+          Each section addresses a different part of the system required
+          to make discipline something you practice—not something you wait to feel.
+        </p>
+
+      </div>
+
+
+      <div class="pillar-list">
+
+
+        <div class="pillar">
+
+          <div class="pillar-number">
+            01
+          </div>
+
+          <h3>
+            The Foundation
+          </h3>
+
+          <p>
+            Recognize the negotiation loop and understand how discipline
+            begins with keeping your word to yourself.
+          </p>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <div class="pillar-number">
+            02
+          </div>
+
+          <h3>
+            The Mind
+          </h3>
+
+          <p>
+            Learn to separate thoughts from commands and distinguish
+            temporary resistance from genuine limi
