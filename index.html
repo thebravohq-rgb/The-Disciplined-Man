@@ -3,1312 +3,450 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Disciplined Man — The Bravo</title>
-
-<meta name="description"
-content="The Disciplined Man by The Bravo. A practical book about discipline, standards, habits, self-command and keeping your word.">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-
-:root {
-  --bg:#090909;
-  --surface:#10100f;
-  --surface2:#141412;
-  --border:rgba(255,255,255,.09);
-  --text:#f2efe7;
-  --muted:#99968e;
-  --gold:#c9a227;
-  --gold-light:#dfc45a;
-  --max:1160px;
-}
-
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html {
-  scroll-behavior:smooth;
-}
-
-body {
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial, Helvetica, sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-a {
-  color:inherit;
-  text-decoration:none;
-}
-
-.container {
-  width:min(var(--max),calc(100% - 40px));
-  margin:auto;
-}
-
-
-/* =========================
-   NAV
-========================= */
-
-nav {
-  height:72px;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-}
-
-.nav-inner {
-  width:min(var(--max),calc(100% - 40px));
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.brand {
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-}
-
-.nav-link {
-  color:#85827b;
-  font-size:12px;
-}
-
-.nav-link:hover {
-  color:#fff;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  padding:105px 0 115px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero::after {
-  content:"";
-  position:absolute;
-  width:520px;
-  height:520px;
-  right:-200px;
-  top:80px;
-  border-radius:50%;
-  background:rgba(201,162,39,.045);
-  filter:blur(120px);
-}
-
-.hero-grid {
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:90px;
-  align-items:center;
-}
-
-.eyebrow {
-  color:var(--gold-light);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
-h1 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(58px,7vw,86px);
-  line-height:.9;
-  letter-spacing:-.055em;
-  margin-bottom:30px;
-}
-
-.hero-copy {
-  color:#b8b5ad;
-  max-width:540px;
-  font-size:17px;
-  line-height:1.75;
-  margin-bottom:30px;
-}
-
-.price-row {
-  display:flex;
-  align-items:center;
-  gap:18px;
-  margin-bottom:24px;
-}
-
-.price {
-  font-size:28px;
-  font-weight:800;
-}
-
-.format {
-  color:#77746d;
-  font-size:12px;
-  padding-left:18px;
-  border-left:1px solid var(--border);
-}
-
-.cta {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--gold);
-  color:#080807;
-  padding:16px 27px;
-  border:1px solid var(--gold);
-  border-radius:2px;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-  transition:.2s ease;
-}
-
-.cta:hover {
-  background:var(--gold-light);
-  transform:translateY(-2px);
-}
-
-.secure {
-  margin-top:12px;
-  color:#62605a;
-  font-size:10px;
-}
-
-
-/* =========================
-   BOOK
-========================= */
-
-.book-area {
-  display:flex;
-  justify-content:center;
-  perspective:1200px;
-}
-
-.book {
-  width:315px;
-  height:450px;
-  padding:35px 32px;
-  position:relative;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-
-  background:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(201,162,39,.12),
-      transparent 28%
-    ),
-    linear-gradient(145deg,#1b1b19,#070706);
-
-  border:1px solid #35332d;
-
-  box-shadow:
-    -28px 32px 70px rgba(0,0,0,.65),
-    0 0 0 1px rgba(255,255,255,.02);
-
-  transform:rotateY(-9deg) rotateX(2deg);
-}
-
-.book::after {
-  content:"";
-  position:absolute;
-  right:-12px;
-  top:7px;
-  bottom:7px;
-  width:11px;
-  background:#131311;
-  border-right:1px solid #292823;
-}
-
-.book-top {
-  color:var(--gold-light);
-  font-size:8px;
-  font-weight:800;
-  letter-spacing:.25em;
-  text-transform:uppercase;
-}
-
-.book-title {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:42px;
-  line-height:.88;
-  letter-spacing:-.05em;
-  text-transform:uppercase;
-}
-
-.book-rule {
-  width:42px;
-  height:1px;
-  background:var(--gold);
-  margin:21px 0;
-}
-
-.book-subtitle {
-  color:#9d9a92;
-  font-size:9px;
-  letter-spacing:.12em;
-  line-height:1.8;
-  text-transform:uppercase;
-}
-
-.book-bottom {
-  color:#706d66;
-  font-size:8px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-}
-
-
-/* =========================
-   BAR
-========================= */
-
-.trust {
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:22px;
-  text-align:center;
-  color:#77746d;
-  font-size:10px;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-}
-
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-section {
-  padding:105px 0;
-}
-
-.label {
-  color:var(--gold-light);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.21em;
-  text-transform:uppercase;
-  margin-bottom:17px;
-}
-
-.section-title {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(39px,5vw,62px);
-  line-height:1;
-  letter-spacing:-.045em;
-  max-width:800px;
-  margin-bottom:25px;
-}
-
-.intro {
-  color:var(--muted);
-  max-width:650px;
-  font-size:16px;
-  line-height:1.75;
-}
-
-
-/* =========================
-   REAL PROBLEM
-========================= */
-
-.dark-section {
-  background:#0d0d0c;
-}
-
-.problem-grid {
-  margin-top:52px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-
-.problem {
-  padding:32px;
-  background:var(--surface);
-  border:1px solid var(--border);
-}
-
-.problem-number {
-  color:var(--gold);
-  font-size:10px;
-  font-weight:900;
-  margin-bottom:40px;
-}
-
-.problem h3 {
-  font-family:Georgia,serif;
-  font-size:24px;
-  line-height:1.1;
-  margin-bottom:13px;
-}
-
-.problem p {
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-}
-
-
-/* =========================
-   REALITY SECTION
-========================= */
-
-.reality {
-  max-width:800px;
-}
-
-.reality p {
-  color:#aaa79f;
-  font-family:Georgia,serif;
-  font-size:21px;
-  line-height:1.65;
-  margin-top:25px;
-}
-
-.reality strong {
-  color:#eeeae0;
-}
-
-
-/* =========================
-   INSIDE
-========================= */
-
-.inside-grid {
-  margin-top:52px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border-top:1px solid var(--border);
-}
-
-.inside-item {
-  padding:27px 0;
-  border-bottom:1px solid var(--border);
-}
-
-.inside-item:nth-child(odd) {
-  margin-right:34px;
-}
-
-.inside-item:nth-child(even) {
-  padding-left:34px;
-  border-left:1px solid var(--border);
-}
-
-.inside-number {
-  color:var(--gold);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.14em;
-}
-
-.inside-item h3 {
-  font-family:Georgia,serif;
-  font-size:22px;
-  margin:7px 0;
-}
-
-.inside-item p {
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.7;
-}
-
-
-/* =========================
-   MANIFESTO
-========================= */
-
-.manifesto {
-  background:#11110f;
-  text-align:center;
-}
-
-.manifesto-inner {
-  max-width:820px;
-  margin:auto;
-}
-
-.manifesto h2 {
-  font-family:Georgia,serif;
-  font-size:clamp(40px,5vw,67px);
-  line-height:1;
-  letter-spacing:-.05em;
-  margin-bottom:28px;
-}
-
-.manifesto p {
-  color:var(--muted);
-  max-width:620px;
-  margin:auto;
-  font-size:16px;
-  line-height:1.75;
-}
-
-
-/* =========================
-   FOR WHO
-========================= */
-
-.for-grid {
-  margin-top:50px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-.for-card {
-  border:1px solid var(--border);
-  background:var(--surface);
-  padding:32px;
-}
-
-.for-card h3 {
-  font-family:Georgia,serif;
-  font-size:25px;
-  margin-bottom:12px;
-}
-
-.for-card p {
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-}
-
-
-/* =========================
-   30 DAY
-========================= */
-
-.challenge {
-  background:#0d0d0c;
-}
-
-.challenge-box {
-  border:1px solid var(--border);
-  background:var(--surface);
-  padding:45px;
-  max-width:900px;
-}
-
-.challenge-box h3 {
-  font-family:Georgia,serif;
-  font-size:34px;
-  margin-bottom:18px;
-}
-
-.challenge-box p {
-  color:var(--muted);
-  max-width:700px;
-  font-size:15px;
-  line-height:1.75;
-}
-
-.challenge-list {
-  margin-top:25px;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-
-.challenge-item {
-  padding:20px 12px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:#aaa69d;
-  text-align:center;
-}
-
-.challenge-item + .challenge-item {
-  border-left:1px solid var(--border);
-}
-
-
-/* =========================
-   OFFER
-========================= */
-
-.offer {
-  background:#11110f;
-}
-
-.offer-box {
-  max-width:850px;
-  margin:auto;
-  text-align:center;
-  border:1px solid var(--border);
-  background:var(--surface);
-  padding:70px 35px;
-}
-
-.offer-box h2 {
-  font-family:Georgia,serif;
-  font-size:clamp(40px,5vw,60px);
-  line-height:1;
-  letter-spacing:-.045em;
-  margin-bottom:22px;
-}
-
-.offer-box p {
-  color:var(--muted);
-  max-width:610px;
-  margin:0 auto 28px;
-  font-size:15px;
-  line-height:1.75;
-}
-
-.big-price {
-  font-size:38px;
-  font-weight:900;
-  margin-bottom:24px;
-}
-
-
-/* =========================
-   FAQ
-========================= */
-
-.faq {
-  max-width:820px;
-  margin:50px auto 0;
-}
-
-details {
-  border-top:1px solid var(--border);
-  padding:23px 0;
-}
-
-details:last-child {
-  border-bottom:1px solid var(--border);
-}
-
-summary {
-  cursor:pointer;
-  list-style:none;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-size:15px;
-  font-weight:700;
-}
-
-summary::-webkit-details-marker {
-  display:none;
-}
-
-summary::after {
-  content:"+";
-  color:var(--gold);
-  font-size:19px;
-}
-
-details[open] summary::after {
-  content:"−";
-}
-
-details p {
-  padding-top:14px;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.7;
-  max-width:700px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  border-top:1px solid var(--border);
-  padding:32px 0;
-  color:#62605a;
-  font-size:9px;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-}
-
-.footer-inner {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-}
-
-
-/* =========================
-   MOBILE CTA
-========================= */
-
-.mobile-cta {
-  display:none;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:850px) {
-
-  .container,
-  .nav-inner {
-    width:min(100% - 28px,var(--max));
+  :root{
+    --bg: #1B1917;
+    --bg-panel: #232019;
+    --bg-panel-2: #17150F;
+    --text: #EDE7DC;
+    --text-muted: #A79A85;
+    --gold: #C49A4A;
+    --gold-dim: #8A6E3B;
+    --rule: #3A342A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Lora', Georgia, serif;
+    font-size:18px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.02em;
+    color:var(--gold);
+  }
+  a{color:var(--gold);}
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .wide{
+    max-width:820px;
+    margin:0 auto;
+    padding:0 24px;
   }
 
-  .hero {
-    padding:70px 0 80px;
+  /* Hero */
+  header.hero{
+    padding:88px 0 72px;
+    border-bottom:1px solid var(--rule);
+  }
+  header.hero .kicker{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:34px;
+  }
+  header.hero .kicker .mark{
+    color:var(--gold);
+    font-size:16px;
+  }
+  h1{
+    font-size:44px;
+    line-height:1.22;
+    font-weight:600;
+    margin:0 0 26px;
+    max-width:15ch;
+  }
+  .sub{
+    font-size:19px;
+    color:var(--text-muted);
+    font-style:italic;
+    margin:0 0 40px;
+    max-width:46ch;
+  }
+  .price-row{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .price{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:26px;
+    color:var(--gold);
+  }
+  .price-note{
+    font-size:14px;
+    color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .cta{
+    display:inline-block;
+    background:var(--gold);
+    color:#17150F;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    padding:16px 30px;
+    border:1px solid var(--gold);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .cta:hover{
+    background:transparent;
+    color:var(--gold);
+  }
+  .cta-secondary{
+    display:inline-block;
+    margin-top:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-muted);
   }
 
-  .hero-grid {
-    grid-template-columns:1fr;
-    gap:60px;
+  /* Sections */
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  section:last-of-type{border-bottom:none;}
+  .section-label{
+    margin-bottom:18px;
+  }
+  h2{
+    font-size:28px;
+    font-weight:600;
+    line-height:1.35;
+    margin:0 0 24px;
+    max-width:20ch;
+  }
+  p{
+    margin:0 0 20px;
+  }
+  .lede{
+    font-size:20px;
+    color:var(--text);
+    max-width:34ch;
   }
 
-  .book-area {
-    order:-1;
+  /* Problem section two-line contrast */
+  .contrast{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    margin:36px 0 8px;
   }
-
-  h1 {
-    font-size:57px;
+  .contrast div{
+    border-left:1px solid var(--rule);
+    padding-left:20px;
   }
-
-  section {
-    padding:75px 0;
-  }
-
-  .problem-grid {
-    grid-template-columns:1fr;
-  }
-
-  .inside-grid {
-    grid-template-columns:1fr;
-  }
-
-  .inside-item:nth-child(odd) {
-    margin-right:0;
-  }
-
-  .inside-item:nth-child(even) {
-    padding-left:0;
-    border-left:none;
-  }
-
-  .for-grid {
-    grid-template-columns:1fr;
-  }
-
-  .challenge-list {
-    grid-template-columns:1fr;
-  }
-
-  .challenge-item + .challenge-item {
-    border-left:none;
-    border-top:1px solid var(--border);
-  }
-
-  .offer-box {
-    padding:55px 22px;
-  }
-
-  .footer-inner {
-    flex-direction:column;
-  }
-
-  .mobile-cta {
+  .contrast .h{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:10px;
     display:block;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:1000;
-    padding:9px;
-    background:rgba(9,9,9,.96);
-    border-top:1px solid var(--border);
+  }
+  .contrast p{
+    margin:0;
+    font-size:16px;
+    color:var(--text-muted);
   }
 
-  .mobile-cta .cta {
-    width:100%;
+  /* Chapter list */
+  .chapters{
+    list-style:none;
+    padding:0;
+    margin:36px 0 0;
+    counter-reset:ch;
+  }
+  .chapters li{
+    counter-increment:ch;
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:18px;
+    padding:22px 0;
+    border-top:1px solid var(--rule);
+  }
+  .chapters li:last-child{
+    border-bottom:1px solid var(--rule);
+  }
+  .chapters li::before{
+    content:counter(ch, decimal-leading-zero);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    color:var(--gold-dim);
+    padding-top:2px;
+  }
+  .chapters .ch-title{
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .chapters .ch-desc{
+    font-size:15px;
+    color:var(--text-muted);
+    line-height:1.6;
   }
 
-  body {
-    padding-bottom:70px;
+  /* Who it's for */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    margin-top:30px;
   }
-}
-
-@media(max-width:480px) {
-
-  h1 {
-    font-size:50px;
+  .two-col ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .two-col li{
+    padding:10px 0;
+    border-top:1px solid var(--rule);
+    font-size:16px;
+    color:var(--text-muted);
+  }
+  .two-col li:last-child{
+    border-bottom:1px solid var(--rule);
+  }
+  .two-col h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    font-weight:500;
+    color:var(--text);
+    margin:0 0 4px;
   }
 
-  .price-row {
-    flex-direction:column;
-    align-items:flex-start;
-    gap:9px;
+  /* Proof panel */
+  .proof{
+    background:var(--bg-panel);
+    border:1px solid var(--rule);
+    padding:36px 32px;
+    margin-top:8px;
+  }
+  .proof .stages{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
+  .proof .stage{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    border:1px solid var(--gold-dim);
+    color:var(--gold);
+    padding:7px 14px;
   }
 
-  .format {
-    padding-left:0;
-    border-left:none;
+  /* Close CTA */
+  .close-cta{
+    text-align:left;
+    padding-top:72px;
+    padding-bottom:96px;
   }
-
-  .book {
-    width:245px;
-    height:350px;
-    padding:29px 26px;
-  }
-
-  .book-title {
+  .close-cta h2{
+    max-width:16ch;
     font-size:32px;
   }
-}
+  .close-cta .price-row{margin-top:32px;}
 
+  footer{
+    padding:40px 0 64px;
+    text-align:center;
+    color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  footer .mark{
+    color:var(--gold);
+    font-size:18px;
+    display:block;
+    margin-bottom:12px;
+  }
+
+  @media (max-width:640px){
+    body{font-size:16px;}
+    h1{font-size:32px;}
+    h2{font-size:24px;}
+    .contrast, .two-col{grid-template-columns:1fr;}
+    header.hero{padding:56px 0 48px;}
+    section{padding:48px 0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .cta{transition:none;}
+  }
 </style>
 </head>
-
-
 <body>
 
-
-<!-- NAVIGATION -->
-
-<nav>
-
-  <div class="nav-inner">
-
-    <div class="brand">
-      The Bravo
-    </div>
-
-    <a href="#inside" class="nav-link">
-      Inside The Book ↓
-    </a>
-
-  </div>
-
-</nav>
-
-
-<!-- HERO -->
-
 <header class="hero">
-
-  <div class="container hero-grid">
-
-
-    <div>
-
-      <div class="eyebrow">
-        A book by The Bravo
-      </div>
-
-      <h1>
-        The<br>
-        Disciplined<br>
-        Man.
-      </h1>
-
-      <p class="hero-copy">
-        Discipline isn't about becoming perfect.
-        It's about becoming a man who can rely on himself.
-      </p>
-
-
-      <div class="price-row">
-
-        <div class="price">
-          $13.99
-        </div>
-
-        <div class="format">
-          Digital Book · Instant Access
-        </div>
-
-      </div>
-
-
-      <a
-        href="https://thebrav0.gumroad.com/l/lfwxxs"
-        class="cta"
-      >
-        Get The Book →
-      </a>
-
-      <div class="secure">
-        Secure checkout · Digital delivery
-      </div>
-
+  <div class="wrap">
+    <div class="kicker">
+      <span class="mark">🔱</span>
+      <span class="label">the bravo</span>
     </div>
-
-
-    <div class="book-area">
-
-      <div class="book">
-
-        <div class="book-top">
-          The Bravo
-        </div>
-
-        <div>
-
-          <div class="book-title">
-            The<br>
-            Disciplined<br>
-            Man
-          </div>
-
-          <div class="book-rule"></div>
-
-          <div class="book-subtitle">
-            Build the standard.<br>
-            Keep the promise.<br>
-            Become the man.
-          </div>
-
-        </div>
-
-        <div class="book-bottom">
-          A Bravo Original
-        </div>
-
-      </div>
-
+    <h1>Talent opens doors. Discipline is what walks through them.</h1>
+    <p class="sub">The Disciplined Man — a practical guide to self-government, for men who are done waiting to feel ready.</p>
+    <div class="price-row">
+      <span class="price">$9.99</span>
+      <span class="price-note">instant PDF download</span>
     </div>
-
+    <a class="cta" href="https://thebrav0.gumroad.com/l/lfwxxs">Get the book</a>
   </div>
-
 </header>
 
-
-<!-- TRUST -->
-
-<div class="trust">
-  For the man who is tired of making promises to himself.
-</div>
-
-
-<!-- THE REAL PROBLEM -->
-
-<section class="dark-section">
-
-  <div class="container">
-
-    <div class="label">
-      The real problem
+<section>
+  <div class="wrap">
+    <span class="label section-label">the problem</span>
+    <h2>You already know what to do.</h2>
+    <p class="lede">That was never the part you struggled with.</p>
+    <p>You know the workout you're skipping. You know the work you're avoiding. You know the version of yourself you keep describing to other people and never becoming. Knowing isn't the gap. The gap is what happens the moment feeling ready doesn't show up — and it never does.</p>
+    <div class="contrast">
+      <div>
+        <span class="h">what talent does</span>
+        <p>Gets you attention, a head start, a compliment. Then it sits there waiting for you to show up.</p>
+      </div>
+      <div>
+        <span class="h">what discipline does</span>
+        <p>Shows up anyway. On the day you don't feel it, discipline is the only thing left standing.</p>
+      </div>
     </div>
-
-    <h2 class="section-title">
-      You already know what you should be doing.
-    </h2>
-
-    <p class="intro">
-      The problem is doing it consistently when nobody is
-      watching, motivation is gone, and the easier option
-      is sitting right in front of you.
-    </p>
-
-
-    <div class="problem-grid">
-
-
-      <div class="problem">
-
-        <div class="problem-number">
-          01
-        </div>
-
-        <h3>
-          You negotiate with yourself.
-        </h3>
-
-        <p>
-          One exception becomes another.
-          Eventually the standard becomes optional.
-        </p>
-
-      </div>
-
-
-      <div class="problem">
-
-        <div class="problem-number">
-          02
-        </div>
-
-        <h3>
-          You depend on how you feel.
-        </h3>
-
-        <p>
-          When motivation is there, you move.
-          When it disappears, so does the commitment.
-        </p>
-
-      </div>
-
-
-      <div class="problem">
-
-        <div class="problem-number">
-          03
-        </div>
-
-        <h3>
-          You break your own word.
-        </h3>
-
-        <p>
-          Every promise you keep builds self-trust.
-          Every promise you break weakens it.
-        </p>
-
-      </div>
-
-
-    </div>
-
   </div>
-
 </section>
-
-
-<!-- REALITY -->
 
 <section>
-
-  <div class="container">
-
-    <div class="label">
-      The truth
-    </div>
-
-    <div class="reality">
-
-      <h2 class="section-title">
-        Nobody is coming to build your discipline for you.
-      </h2>
-
-      <p>
-        You can read another quote.
-        Watch another video.
-        Make another plan.
-      </p>
-
-      <p>
-        Or you can start doing what you said you would do.
-      </p>
-
-      <p>
-        <strong>
-          That's where self-respect starts.
-        </strong>
-      </p>
-
-    </div>
-
+  <div class="wrap">
+    <span class="label section-label">what this book does</span>
+    <h2>It gives you a system, not a pep talk.</h2>
+    <p>The Disciplined Man isn't about trying harder. It's about removing the negotiation — the daily argument between what you decided and how you feel about it right now. Seven chapters, each built around one domain a man has to govern: his decisions, his mind, his mornings, his habits, his solitude, his body, and finally, the code that holds all of it together.</p>
+    <p>No filler chapters. No recycled motivational language. Every chapter ends the same way every good standard should — with something you do, not something you feel.</p>
   </div>
-
 </section>
-
-
-<!-- INSIDE THE BOOK -->
-
-<section id="inside" class="dark-section">
-
-  <div class="container">
-
-    <div class="label">
-      Inside the book
-    </div>
-
-    <h2 class="section-title">
-      This is what you'll work through.
-    </h2>
-
-    <p class="intro">
-      No complicated system.
-      Just the areas that determine whether your discipline
-      survives when life gets difficult.
-    </p>
-
-
-    <div class="inside-grid">
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 01
-        </div>
-
-        <h3>
-          The Foundation
-        </h3>
-
-        <p>
-          Understand the negotiation loop and why
-          discipline begins with keeping promises to yourself.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 02
-        </div>
-
-        <h3>
-          The Mind
-        </h3>
-
-        <p>
-          Learn to recognize thoughts without automatically
-          treating them as commands.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 03
-        </div>
-
-        <h3>
-          Morning Mastery
-        </h3>
-
-        <p>
-          Build a morning standard that gives your day
-          direction before distraction takes over.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 04
-        </div>
-
-        <h3>
-          Habits
-        </h3>
-
-        <p>
-          Build habits through cues, repetition and evidence
-          instead of waiting to feel motivated.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 05
-        </div>
-
-        <h3>
-          Silence & Solitude
-        </h3>
-
-        <p>
-          Learn why constant noise weakens your ability
-          to think clearly and sit with yourself.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 06
-        </div>
-
-        <h3>
-          Physical Discipline
-        </h3>
-
-        <p>
-          Build physical discipline without confusing
-          discipline with neglect or obsession.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          CHAPTER 07
-        </div>
-
-        <h3>
-          The Code
-        </h3>
-
-        <p>
-          Define the principles you refuse to abandon
-          when circumstances become difficult.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          30-DAY PROOF
-        </div>
-
-        <h3>
-          Thirty Days
-        </h3>
-
-        <p>
-          Put the ideas into practice through five daily
-          standards: Promise, Mind, Morning, Body and Code.
-        </p>
-
-      </div>
-
-
-      <div class="inside-item">
-
-        <div class="inside-number">
-          FINAL SECTION
-        </div>
-
-        <h3>
-          One Last Decision
-        </h3>
-
-        <p>
-          Stop waiting for the right feeling.
-          Decide what kind of man you are going to be.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- MANIFESTO -->
-
-<section class="manifesto">
-
-  <div class="container manifesto-inner">
-
-    <div class="label">
-      The Bravo
-    </div>
-
-    <h2>
-      Your word should mean something.
-      Especially to yourself.
-    </h2>
-
-    <p>
-      Discipline isn't about never slipping.
-      It's about refusing to let one bad day become
-      your standard.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- WHO IT IS FOR -->
 
 <section>
+  <div class="wrap">
+    <span class="label section-label">inside the book</span>
+    <h2>Seven chapters. One code.</h2>
+    <ul class="chapters">
+      <li>
+        <div>
+          <div class="ch-title">The Foundation</div>
+          <div class="ch-desc">Protect the decision before you make it — the moment most men lose without noticing.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="ch-title">Controlling Your Mind</div>
+          <div class="ch-desc">Catch the argument your own head makes against you, before it wins.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="ch-title">Morning Mastery</div>
+          <div class="ch-desc">Own the first hour, and the rest of the day stops negotiating with you.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="ch-title">Building Unbreakable Habits</div>
+          <div class="ch-desc">Make the standard repeatable, so it survives your worst days, not just your best ones.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="ch-title">Silence & Solitude</div>
+          <div class="ch-desc">Examine the direction, not just the pace — before you sprint further down the wrong road.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="ch-title">Physical Discipline</div>
+          <div class="ch-desc">Prove it in the body. Care, train, recover, return — the cycle most men break in one place.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="ch-title">The Code</div>
+          <div class="ch-desc">Where every domain converges into the standard you keep when no one's watching.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <div class="container">
-
-    <div class="label">
-      Who this is for
+<section>
+  <div class="wide">
+    <span class="label section-label">the 30-day proof</span>
+    <h2>You don't finish this book. You test it.</h2>
+    <div class="proof">
+      <p style="margin-bottom:0;">The book closes with a 30-day standard, not a summary. Five daily checks that turn every chapter into something you either did or didn't do — no in-between, no self-grading on effort.</p>
+      <div class="stages">
+        <span class="stage">Keep one promise</span>
+        <span class="stage">Own your morning</span>
+        <span class="stage">Move your body</span>
+        <span class="stage">Control your attention</span>
+        <span class="stage">Review your day</span>
+      </div>
     </div>
+  </div>
+</section>
 
-    <h2 class="section-title">
-      This book isn't for everyone.
-    </h2>
-
-    <p class="intro">
-      It's for the man who knows there is a gap between
-      the man he says he wants to be and the way he
-      actually lives.
-    </p>
-
-
-    <div class="for-grid">
-
-
-      <div class="for-card">
-
-        <h3>
-          For the man who is tired of starting over.
-        </h3>
-
-        <p>
-          You don't need another burst of motivation.
-          You need something you can actually live by.
-        </p>
-
+<section>
+  <div class="wrap">
+    <span class="label section-label">who this is for</span>
+    <div class="two-col">
+      <div>
+        <h3>Read this if</h3>
+        <ul>
+          <li>You've read enough. You want the version that ends in action.</li>
+          <li>You know your habits are borrowed, not chosen, and want to fix that.</li>
+          <li>You want standards, not another goal you'll abandon in February.</li>
+        </ul>
       </div>
-
-
-      <div class="for-card">
-
-        <h3>
-          For the man who wants self-respect.
-        </h3>
-
-        <p>
-          Not confidence for show.
-          The quiet confidence that comes from knowing
-          you can trust yourself.
-        </p>
-
+      <div>
+        <h3>Skip this if</h3>
+        <ul>
+          <li>You want motivation to feel better today. That fades by Thursday.</li>
+          <li>You're looking for a 30-day fix with no follow-through required.</li>
+          <li>You're not willing to do anything differently tomorrow morning.</li>
+        </ul>
       </div>
+    </div>
+  </div>
+</section>
 
+<section class="close-cta">
+  <div class="wrap">
+    <span class="label section-label">get the book</span>
+    <h2>Stop waiting to feel ready. Build the standard.</h2>
+    <p>Instant PDF download. Read it once, then keep it as the reference you return to every time you catch yourself negotiating.</p>
+    <div class="price-row">
+      <span class="price">$9.99</span>
+      <span class="price-note">one-time payment</span>
+    </div>
+    <a class="cta" href="https://thebrav0.gumroad.com/l/lfwxxs">Get the book</a>
+  </div>
+</section>
 
-      <div class="for-card">
+<footer>
+  <span class="mark">🔱</span>
+  The Disciplined Man — The Bravo
+</footer>
 
-        <h3>
-          For the man who wants standards.
-       
+</body>
+        </html>
+        
