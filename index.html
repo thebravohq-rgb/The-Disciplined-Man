@@ -3,245 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Disciplined Man | The Bravo</title>
+
+<title>The Disciplined Man | AVO</title>
+
+<meta name="description" content="Stop starting over. The Disciplined Man is a practical guide to self-government, building habits and keeping your commitments.">
 
 <style>
 :root {
-    --background: #111111;
-    --surface: #1b1b1b;
-    --surface-light: #222222;
-    --text: #eeeeea;
-    --muted: #b4b4ad;
+    --black: #0b0b0b;
+    --surface: #141414;
+    --white: #f4f2ed;
+    --muted: #aaa8a1;
     --gold: #c5a46d;
-    --gold-light: #dfc18c;
-    --border: #38342d;
+    --line: #292929;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    background: var(--background);
-    color: var(--text);
+    background: var(--black);
+    color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.75;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
     width: 100%;
-    max-width: 850px;
-    margin: auto;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0 25px;
 }
 
 section {
-    padding: 65px 0;
-    border-bottom: 1px solid #292929;
+    padding: 90px 0;
+    border-bottom: 1px solid var(--line);
 }
 
-.brand {
+.eyebrow {
     color: var(--gold);
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 700;
     letter-spacing: 4px;
-    text-align: center;
-    padding-top: 35px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
 }
 
 h1, h2, h3 {
-    line-height: 1.2;
+    line-height: 1.12;
+    letter-spacing: -1px;
 }
 
 h1 {
-    font-size: clamp(36px, 7vw, 58px);
-    text-align: center;
-    margin: 25px 0;
-    letter-spacing: -1.5px;
+    font-size: clamp(46px, 8vw, 76px);
+    max-width: 750px;
+    margin-bottom: 25px;
+    font-weight: 800;
 }
 
 h2 {
-    font-size: clamp(27px, 5vw, 36px);
-    margin: 0 0 25px;
-    letter-spacing: -0.5px;
+    font-size: clamp(34px, 6vw, 49px);
+    max-width: 750px;
+    margin-bottom: 28px;
 }
 
 h3 {
-    font-size: 21px;
-    color: var(--gold-light);
-    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 8px;
 }
 
 p {
-    font-size: 17px;
     color: var(--muted);
-    margin: 0 0 18px;
+    font-size: 17px;
+    margin-bottom: 20px;
 }
 
 strong {
-    color: var(--text);
+    color: var(--white);
+    font-weight: 700;
 }
 
 .gold {
-    color: var(--gold-light);
-}
-
-.center {
-    text-align: center;
+    color: var(--gold);
 }
 
 .hero {
-    padding: 75px 0 85px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    border-bottom: 1px solid var(--line);
 }
 
-.hero p {
-    max-width: 680px;
-    margin: 0 auto 20px;
-    text-align: center;
+.hero-content {
+    max-width: 780px;
 }
 
-.hero .subheading {
-    font-size: 20px;
-    color: var(--text);
-    margin-bottom: 25px;
+.hero-subtitle {
+    color: var(--white);
+    font-size: clamp(20px, 3vw, 25px);
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    max-width: 650px;
+    font-size: 18px;
+    margin-bottom: 32px;
 }
 
 .button {
     display: inline-block;
     background: var(--gold);
-    color: #17130d;
+    color: #111;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 17px 30px;
-    border-radius: 4px;
-    margin-top: 22px;
-    transition: background 0.2s ease;
+    padding: 17px 28px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .3px;
+    border: 1px solid var(--gold);
+    transition: all .2s ease;
 }
 
 .button:hover {
-    background: var(--gold-light);
-}
-
-.section-label {
+    background: transparent;
     color: var(--gold);
+}
+
+.trust-line {
     font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+    color: #85837d;
+    margin-top: 15px;
+    letter-spacing: .5px;
 }
 
-.highlight {
-    border-left: 3px solid var(--gold);
-    padding: 5px 0 5px 22px;
-    margin: 30px 0;
+.cycle {
+    margin-top: 40px;
+    border-top: 1px solid var(--line);
 }
 
-.highlight p {
-    color: var(--text);
-    font-size: 19px;
+.cycle-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 25px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.cycle-time {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cycle-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.statement {
+    border-left: 2px solid var(--gold);
+    padding: 8px 0 8px 24px;
+    margin-top: 35px;
+    max-width: 700px;
+}
+
+.statement p {
+    color: var(--white);
+    font-size: 21px;
     margin: 0;
 }
 
-.systems {
+.chapter-list {
+    margin-top: 35px;
+}
+
+.chapter {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 15px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.chapter-number {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 3px;
+}
+
+.chapter p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.audience-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin-top: 30px;
+    gap: 20px;
+    margin-top: 35px;
 }
 
-.system-card {
+.audience-card {
     background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 25px;
-    border-radius: 5px;
+    border: 1px solid var(--line);
+    padding: 30px;
 }
 
-.system-card p {
-    font-size: 15px;
-    margin-bottom: 0;
-}
-
-.chapter-list {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-}
-
-.chapter-list li {
-    padding: 13px 0;
-    border-bottom: 1px solid #303030;
-    color: var(--muted);
-    font-size: 16px;
-}
-
-.chapter-list li strong {
-    color: var(--text);
-}
-
-.check-list {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0;
-}
-
-.check-list li {
-    padding: 10px 0;
-    color: var(--muted);
-    font-size: 16px;
-}
-
-.check-list li::before {
-    content: "✓";
+.audience-card h3 {
     color: var(--gold);
-    font-weight: bold;
-    margin-right: 12px;
+    margin-bottom: 20px;
 }
 
-.final-cta {
+.audience-card ul {
+    list-style: none;
+}
+
+.audience-card li {
+    color: var(--muted);
+    font-size: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.audience-card li:last-child {
+    border-bottom: none;
+}
+
+.final {
     text-align: center;
-    padding: 75px 0;
+    padding: 110px 0;
+    border-bottom: none;
 }
 
-.final-cta p {
+.final h2 {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 650px;
-    margin: 0 auto 18px;
 }
 
-.small-note {
+.final p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.guarantee {
     font-size: 13px;
-    color: #888880;
-    margin-top: 15px;
+    color: #88867f;
+    margin-top: 22px;
 }
 
 footer {
-    text-align: center;
+    border-top: 1px solid var(--line);
     padding: 30px 0;
+    text-align: center;
     color: #777;
-    font-size: 12px;
-    letter-spacing: 3px;
+    font-size: 11px;
+    letter-spacing: 4px;
 }
 
 @media (max-width: 650px) {
-    .container {
-        padding: 0 20px;
-    }
-
     section {
-        padding: 50px 0;
-    }
-
-    .systems {
-        grid-template-columns: 1fr;
-    }
-
-    p {
-        font-size: 16px;
+        padding: 65px 0;
     }
 
     .hero {
-        padding: 60px 0 65px;
+        min-height: auto;
+        padding: 85px 0;
+    }
+
+    .cycle-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statement p {
+        font-size: 18px;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
     }
 }
 </style>
@@ -249,208 +306,98 @@ footer {
 
 <body>
 
-<div class="container">
+<!-- 1. HERO SECTION -->
 
-<div class="brand">THE BRAVO</div>
+<header class="hero">
+    <div class="container hero-content">
 
-<!-- HERO -->
-<section class="hero">
-    <h1>YOU KNOW WHAT YOU NEED TO DO. SO WHY AREN'T YOU DOING IT?</h1>
+        <div class="eyebrow">AVO PRESENTS</div>
 
-    <p class="subheading">
-        You keep making promises to yourself. Then you keep finding reasons to break them.
-    </p>
+        <h1>How to stop <span class="gold">starting over.</span></h1>
 
-    <p>
-        You tell yourself you'll wake up early, but the alarm rings and you hit snooze.
-        You plan to study, work on your goals or exercise, but somehow the phone takes
-        another hour of your day.
-    </p>
+        <p class="hero-subtitle">
+            You don't lack motivation. You lack discipline.
+        </p>
 
-    <p>
-        You say you'll get your spending under control, finish that important task or
-        finally build a proper routine. Then another week passes, and you're having
-        the same conversation with yourself.
-    </p>
+        <p class="hero-description">
+            Most men don't fail because they don't know what to do.
+            They fail because they keep breaking promises to themselves.
+            They know what needs to change, but struggle to follow through
+            when the excitement wears off.
+        </p>
 
-    <p>
-        You know what needs to change. You've known for a while.
-        <strong>But knowing hasn't been enough to change your behaviour.</strong>
-    </p>
-
-    <div class="center">
-        <a class="button" href="https://thebrav0.gumroad.com/l/lfwxxs">
-            GET THE DISCIPLINED MAN
+        <a href="https://thebrav0.gumroad.com/l/lfwxxs" class="button">
+            Get The Book Now — $X
         </a>
-    </div>
-</section>
 
-
-<!-- THE PROBLEM -->
-<section>
-    <div class="section-label">THE REAL PROBLEM</div>
-
-    <h2>YOU KEEP STARTING. THEN YOU KEEP STARTING OVER.</h2>
-
-    <p>
-        Maybe you've experienced this.
-    </p>
-
-    <p>
-        Sunday night, you're serious about changing your life. You plan your mornings,
-        organise your week and promise yourself that things will be different.
-    </p>
-
-    <p>
-        Monday goes well. Tuesday is manageable. Then something interrupts your routine.
-        You get tired, distracted or fall behind on a task.
-    </p>
-
-    <p>
-        Before long, you're back to sleeping late, wasting time and postponing the work
-        you said mattered to you.
-    </p>
-
-    <p>
-        And when you finally decide to get serious again, you make another big plan.
-        Another fresh start. Another promise.
-    </p>
-
-    <div class="highlight">
-        <p>
-            Every time you break a promise to yourself, it becomes easier to make the
-            next promise without taking it seriously.
-        </p>
-    </div>
-
-    <p>
-        That's the cycle this book is designed to help you break.
-    </p>
-</section>
-
-
-<!-- WHY IT HAPPENS -->
-<section>
-    <div class="section-label">WHAT NEEDS TO CHANGE</div>
-
-    <h2>YOU CANNOT BUILD YOUR LIFE AROUND HOW YOU FEEL.</h2>
-
-    <p>
-        Some mornings you'll wake up ready to work. Other mornings you'll want to stay
-        in bed. Some days you'll have plenty of energy. Other days you'll be tired,
-        frustrated or distracted.
-    </p>
-
-    <p>
-        That's part of life. Your responsibilities don't disappear because you're
-        having an uncomfortable day.
-    </p>
-
-    <p>
-        If you only follow through when you feel motivated, your progress will always
-        depend on your mood.
-    </p>
-
-    <p>
-        You need habits you can maintain, standards you can follow and a way to handle
-        the days when your plans fall apart.
-    </p>
-
-    <p>
-        That's what self-government is about: taking responsibility for your behaviour
-        and learning to direct your own decisions.
-    </p>
-</section>
-
-
-<!-- INTRODUCING THE BOOK -->
-<section>
-    <div class="section-label">INTRODUCING THE BOOK</div>
-
-    <h2>THE DISCIPLINED MAN</h2>
-
-    <h3>A Practical Guide to Self-Government</h3>
-
-    <p>
-        This book is for the man who is tired of knowing what to do but struggling to
-        follow through.
-    </p>
-
-    <p>
-        <strong>The Disciplined Man</strong> gives you practical ways to organise your
-        daily behaviour, control distractions, build habits and keep your commitments
-        even when motivation drops.
-    </p>
-
-    <p>
-        It doesn't ask you to change your entire life overnight. It helps you work on
-        the everyday decisions that shape how you live.
-    </p>
-
-    <p>
-        How you start your morning. What you do with your attention. How you manage your
-        time and money. What happens when you miss a day. How you finish your evening.
-    </p>
-
-    <p>
-        These are ordinary decisions. But repeated over time, they affect the direction
-        of your life.
-    </p>
-</section>
-
-
-<!-- PRACTICAL SYSTEMS -->
-<section>
-    <div class="section-label">PRACTICAL SYSTEMS INSIDE</div>
-
-    <h2>WHAT DO YOU DO WHEN DISCIPLINE GETS DIFFICULT?</h2>
-
-    <p>
-        It's easy to make plans when everything is going well. The real test comes
-        when you're tired, busy, distracted or dealing with an unexpected problem.
-    </p>
-
-    <p>
-        The book introduces practical systems to help you handle those moments instead
-        of abandoning everything.
-    </p>
-
-    <div class="systems">
-
-        <div class="system-card">
-            <h3>The Floor System</h3>
-
-            <p>
-                Set a normal target for the work you want to complete, then establish
-                a smaller minimum you can maintain on difficult days.
-            </p>
-
-            <p>
-                For example, if your study target is one hour, your minimum might be
-                15 minutes when the day becomes difficult.
-            </p>
-
-            <p>
-                You still have work to do, but one difficult day doesn't automatically
-                become a complete break from the habit.
-            </p>
+        <div class="trust-line">
+            Instant PDF Download &nbsp;|&nbsp; Read on Any Device
         </div>
 
-        <div class="system-card">
-            <h3>The Worst Day Protocol</h3>
+    </div>
+</header>
 
-            <p>
-                What happens when your schedule falls apart and you cannot complete
-                everything you planned?
-            </p>
 
-            <p>
-                Instead of giving up on the entire day, you learn to pause, identify
-                what matters most, reduce your workload and maintain realistic minimums.
-            </p>
+<main>
 
+<!-- 2. THE PAIN SECTION -->
+
+<section>
+    <div class="container">
+
+        <div class="eyebrow">THE PATTERN</div>
+
+        <h2>You know this cycle.</h2>
+
+        <p>
+            You've probably lived through it more times than you can count.
+            Every new week feels like another opportunity to finally get
+            yourself together.
+        </p>
+
+        <div class="cycle">
+
+            <div class="cycle-item">
+                <div class="cycle-time">Sunday Night</div>
+                <p>
+                    You make a serious plan. You decide what time you'll wake up,
+                    what you'll work on and what habits you're finally going to build.
+                    This week will be different.
+                </p>
+            </div>
+
+            <div class="cycle-item">
+                <div class="cycle-time">Monday – Tuesday</div>
+                <p>
+                    You start strong. You wake up earlier, get some work done
+                    and feel focused. For a moment, it looks like you're finally
+                    getting somewhere.
+                </p>
+            </div>
+
+            <div class="cycle-item">
+                <div class="cycle-time">Wednesday – Thursday</div>
+                <p>
+                    Life happens. You get tired. Your schedule changes.
+                    You spend longer on your phone than you intended.
+                    One missed commitment becomes two.
+                </p>
+            </div>
+
+            <div class="cycle-item">
+                <div class="cycle-time">Friday – Sunday</div>
+                <p>
+                    You're back to wasting time, sleeping late and postponing
+                    everything. You tell yourself you'll get serious next week.
+                    Then the same cycle begins again.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="statement">
             <p>
-                The goal is to recover, reset and return to your responsibilities.
+                Every time you start over, you trust yourself a little less.
             </p>
         </div>
 
@@ -458,130 +405,221 @@ footer {
 </section>
 
 
-<!-- INSIDE THE BOOK -->
+<!-- 3. THE PROBLEM SECTION -->
+
 <section>
-    <div class="section-label">INSIDE THE BOOK</div>
+    <div class="container">
 
-    <h2>12 CHAPTERS. PRACTICAL WORK YOU CAN APPLY TO YOUR LIFE.</h2>
+        <div class="eyebrow">THE REAL ISSUE</div>
 
-    <p>
-        The book takes you through different areas of self-government, from your
-        morning routine to the way you manage your attention, environment and money.
-    </p>
+        <h2>It's not a motivation problem. It's a trust problem.</h2>
 
-    <ul class="chapter-list">
-        <li><strong>01.</strong> The Foundation</li>
-        <li><strong>02.</strong> Morning Mastery</li>
-        <li><strong>03.</strong> Controlling Your Mind</li>
-        <li><strong>04.</strong> Building Unbreakable Habits</li>
-        <li><strong>05.</strong> Silence and Solitude</li>
-        <li><strong>06.</strong> Physical Discipline</li>
-        <li><strong>07.</strong> The Code</li>
-        <li><strong>08.</strong> Controlling Your Attention</li>
-        <li><strong>09.</strong> Environment and Your Circle</li>
-        <li><strong>10.</strong> Night Discipline</li>
-        <li><strong>11.</strong> Money and Self-Government</li>
-        <li><strong>12.</strong> The Worst Day Protocol</li>
-    </ul>
-
-    <div class="highlight">
         <p>
-            It also includes the <strong>30-Day Proof</strong> — a structured challenge
-            to help you put what you've learned into practice.
+            Think about the promises you've made to yourself recently.
         </p>
+
+        <p>
+            Getting out of bed when the alarm rings. Finishing the work
+            you keep postponing. Putting your phone away when you need
+            to concentrate. Following your routine even when the day
+            doesn't go according to plan.
+        </p>
+
+        <p>
+            You make these promises because you genuinely want to improve.
+            But when the moment comes to follow through, you negotiate.
+            You delay. You make an exception.
+        </p>
+
+        <p>
+            Discipline is learning to keep your commitments even when
+            you don't feel like it. It's doing what you said you would do
+            when nobody is checking on you.
+        </p>
+
+        <p>
+            Every time you repeatedly abandon your own commitments,
+            it becomes easier to dismiss the next one.
+        </p>
+
+        <div class="statement">
+            <p>
+                You cannot keep telling yourself that things will change
+                while repeating the same decisions every week.
+            </p>
+        </div>
+
+        <p style="margin-top:30px;">
+            You need a practical way to take control of your behaviour
+            and build habits you can maintain.
+        </p>
+
     </div>
 </section>
 
 
-<!-- WHO IT IS FOR -->
+<!-- 4. WHAT'S INSIDE SECTION -->
+
 <section>
-    <div class="section-label">WHO THIS BOOK IS FOR</div>
+    <div class="container">
 
-    <h2>THIS IS FOR YOU IF...</h2>
+        <div class="eyebrow">INSIDE THE BOOK</div>
 
-    <ul class="check-list">
-        <li>You keep postponing important tasks even when you know they need attention.</li>
+        <h2>Practical work. Everyday application.</h2>
 
-        <li>You struggle to maintain a routine after the first few days.</li>
+        <p>
+            The Disciplined Man is a practical guide to self-government.
+            It takes you through the daily decisions that shape your habits,
+            attention, routines and responsibilities.
+        </p>
 
-        <li>You spend too much time on your phone and lose hours you intended to use well.</li>
+        <div class="chapter-list">
 
-        <li>You make plans but struggle to follow them consistently.</li>
+            <div class="chapter">
+                <div class="chapter-number">01</div>
+                <div>
+                    <h3>The Foundation</h3>
+                    <p>
+                        Understand what discipline requires and begin taking
+                        responsibility for the choices you make every day.
+                    </p>
+                </div>
+            </div>
 
-        <li>You want to manage your time, attention and spending more deliberately.</li>
+            <div class="chapter">
+                <div class="chapter-number">02</div>
+                <div>
+                    <h3>Morning Mastery</h3>
+                    <p>
+                        Build a morning routine that helps you get out of bed,
+                        organise your priorities and start the day deliberately.
+                    </p>
+                </div>
+            </div>
 
-        <li>You want a practical way to recover when you fall behind instead of giving up.</li>
-    </ul>
+            <div class="chapter">
+                <div class="chapter-number">03</div>
+                <div>
+                    <h3>Controlling Your Attention</h3>
+                    <p>
+                        Recognise how phone distractions and constant stimulation
+                        interrupt your work, then create better boundaries around
+                        your attention.
+                    </p>
+                </div>
+            </div>
 
-    <p>
-        You don't need another week of making promises you might forget by Wednesday.
-        You need to start putting better systems into your everyday life.
-    </p>
+            <div class="chapter">
+                <div class="chapter-number">04</div>
+                <div>
+                    <h3>Physical Discipline</h3>
+                    <p>
+                        Work on the daily habits that support your physical
+                        well-being, including exercise, sleep and taking care
+                        of your body.
+                    </p>
+                </div>
+            </div>
+
+            <div class="chapter">
+                <div class="chapter-number">05</div>
+                <div>
+                    <h3>The 30-Day Proof</h3>
+                    <p>
+                        Put the lessons into practice through a structured
+                        30-day challenge built around daily action and consistency.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <p style="margin-top:30px;">
+            These are five areas from a complete 12-chapter guide.
+            The book also covers habits, mindset, solitude, your personal code,
+            your environment, night routines, money and handling difficult days.
+        </p>
+
+    </div>
 </section>
 
 
-<!-- WHAT YOU GET -->
+<!-- 5. WHO THIS IS FOR / NOT FOR -->
+
 <section>
-    <div class="section-label">YOUR PURCHASE</div>
+    <div class="container">
 
-    <h2>WHAT YOU GET</h2>
+        <div class="eyebrow">BE HONEST WITH YOURSELF</div>
 
-    <ul class="check-list">
-        <li>The complete 137-page eBook in PDF format.</li>
-        <li>12 chapters covering practical areas of self-government.</li>
-        <li>The Floor System for maintaining habits on difficult days.</li>
-        <li>The Worst Day Protocol for handling days that go off track.</li>
-        <li>The 30-Day Proof challenge to put the lessons into action.</li>
-        <li>A digital copy you can read on your phone, tablet or computer.</li>
-    </ul>
+        <h2>Is this the book you need?</h2>
 
-    <p>
-        This is a digital product. Once your purchase is completed through Gumroad,
-        you can access your PDF.
-    </p>
+        <div class="audience-grid">
+
+            <div class="audience-card">
+                <h3>This is for you if:</h3>
+
+                <ul>
+                    <li>You're tired of making plans and abandoning them.</li>
+                    <li>You want a simple, practical approach to building discipline.</li>
+                    <li>You struggle to maintain routines when life gets difficult.</li>
+                    <li>You want better control over your time and attention.</li>
+                    <li>You're ready to put the work into changing your daily behaviour.</li>
+                </ul>
+            </div>
+
+            <div class="audience-card">
+                <h3>This is not for you if:</h3>
+
+                <ul>
+                    <li>You're looking for another collection of motivational quotes.</li>
+                    <li>You expect a book to change your habits without your effort.</li>
+                    <li>You want a magic trick that makes difficult work disappear.</li>
+                    <li>You're unwilling to examine the decisions you keep repeating.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-    <div class="section-label">YOUR NEXT STEP</div>
+<!-- 6. FINAL CTA SECTION -->
 
-    <h2>HOW LONG ARE YOU GOING TO KEEP PUTTING IT OFF?</h2>
+<section class="final">
+    <div class="container">
 
-    <p>
-        Think about the things you've been saying you'll change.
-    </p>
+        <div class="eyebrow">YOUR NEXT MOVE</div>
 
-    <p>
-        The routine you keep abandoning. The work you keep postponing. The hours
-        disappearing into your phone. The commitments you keep making and breaking.
-    </p>
+        <h2>Stop <span class="gold">starting over.</span></h2>
 
-    <p>
-        You don't have to fix everything today. But you can stop treating the same
-        problems as if they'll somehow solve themselves.
-    </p>
+        <p>
+            You already know what you want to change.
+            You've made the plans. You've had the conversations with yourself.
+            You've promised that next week will be different.
+        </p>
 
-    <p>
-        Start working on the habits, decisions and standards that will help you
-        take better control of your everyday life.
-    </p>
+        <p>
+            Now it's time to work on the habits and decisions that keep
+            getting in your way.
+        </p>
 
-    <a class="button" href="https://thebrav0.gumroad.com/l/lfwxxs">
-        GET YOUR COPY OF THE DISCIPLINED MAN
-    </a>
+        <a href="https://thebrav0.gumroad.com/l/lfwxxs" class="button">
+            Download The Disciplined Man Now
+        </a>
 
-    <p class="small-note">
-        137-page digital guide · PDF format · Instant digital access after purchase
-    </p>
+        <p class="guarantee">
+            Read the first chapter. If it doesn't hit you, don't finish it.
+        </p>
+
+    </div>
 </section>
 
+</main>
 
 <footer>
-    THE BRAVO
+    AVO
 </footer>
 
-</div>
-
 </body>
-        </html>
+</html>
